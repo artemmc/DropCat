@@ -21,17 +21,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/admin/suppliers">Поставщики</a></li>
-                    <li><a href="">Бренды</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('admin.inc.top-menu')
 </header>
 <div class="container">
     <div class="row">
