@@ -2,6 +2,11 @@
 
 @section('content')
 <h1 class="text-center">Список - Поставщиков</h1>
+<div class="row">
+    <div class="col-md-offset-10 col-md-2 text-right">
+        <a href="{{ route('adminSupplierAdd') }}" class="btn btn-success">Добавить</a>
+    </div>
+</div>
 <table class="table table-striped table-hover">
     <thead>
         <tr>
@@ -13,7 +18,7 @@
             <td>Viber</td>
             <td>Группа VK</td>
             <td>Цены (таблица)</td>
-            <td>Удалить</td>
+            <td>Действия</td>
         </tr>
     </thead>
     <tbody>
@@ -38,10 +43,15 @@
             <td><a href="{{ $supplier->group_vk }}">Перейти в VK</a></td>
             <td><a href="{{ $supplier->table_link }}">Перейти в таблицу</a></td>
             <td>
+                <form action="{{ route('adminSupplierEdit',['id' => $supplier->id]) }}" method="POST">
+                    {{ method_field('UPDATE') }}
+                    {{ csrf_field() }}
+                <button type="submit" class="btn btn-success"><i class="fa fa-pencil"></i></button>
+                </form>
                 <form action="{{ route('supplierDelete',['id' => $supplier->id]) }}" method="POST">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">х</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
                 </form>
             </td>
         </tr>

@@ -2,6 +2,10 @@
 
 @section('content')
 <h1 class="text-center">Список - Поставщиков</h1>
+
+<div class="col-md-offset-9 col-md-3">
+    <button class="btn btn-default">Добавить</button>
+</div>
 <table class="table table-striped table-hover">
     <thead>
         <tr>

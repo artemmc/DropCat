@@ -17,22 +17,30 @@ Route::get('/', function () {
 });
 
 
-Route::get('suppliers/', 'SupplierController@index');
+Route::get('suppliers/', 'SupplierController@index')->name('suppliersShow');
 
 Route::get('supplier/{id}', 'SupplierController@show')->name('supplierShow');
 
-Route::get('admin/suppliers/', 'AdminSupplierController@show')->name('adminSupplierShow');
+Route::get('admin/', 'Admin\IndexController@index')->name('adminIndex');
 
-Route::get('admin/supplier/add', 'SupplierController@add');
+Route::get('admin/suppliers/', 'Admin\SupplierController@index')->name('adminSupplierShow');
 
-Route::post('admin/supplier/add', 'SupplierController@save')->name('supplierSave');
+Route::get('admin/supplier/add', 'Admin\SupplierController@add')->name('adminSupplierAdd');
 
-Route::delete('admin/supplier/delete/{supplier_id}', function (\App\Supplier $supplier_id) {
+Route::get('admin/supplier/edit/{supplier_id}', 'Admin\SupplierController@edit')->name('adminSupplierEdit');
 
-		//$supplier_tmp = \App\Supplier::where('id', $id)->first();
+Route::post('admin/supplier/add', 'Admin\SupplierController@save')->name('supplierSave');
+
+Route::delete('admin/supplier/delete/{supplier_id}', function (\App\Suppliers $supplier_id) {
+
+		//$supplier_tmp = \App\Suppliers::where('id', $id)->first();
 
 		$supplier_id->delete();
 
 		return redirect ('suppliers/');
 
 })->name('supplierDelete');
+
+
+
+Route::resource('admin/suppliers', 'Admin\SupplierAction');

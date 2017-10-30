@@ -12,17 +12,17 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 </head>
 <body>
-	<div class="container">
+<div class="container">
 
-		@yield('content')
-	</div>
+	@yield('content')
+</div>
 </body>
 </html>
 
 
-<?php 
+<?php
 ?>
