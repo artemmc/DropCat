@@ -1,13 +1,3 @@
-@extends('blocks.site')
-
-@section('content')
-<h1 class="text-center">DropCat - Дропшиппинг каталог</h1>
-<ul>
-    <li><a href="{{ route('suppliers.store') }}">Поставщики</a></li>
-    <li><a href="{{ route('suppliers.index') }}">Админка</a></li>
-</ul>
-@endsection
-
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -30,12 +20,19 @@
 </head>
 <body>
 <header>
-    @include('inc.top-menu')
+    @include('site.inc.top-menu')
 </header>
 <div class="container">
     <div class="row">
-        @include('admin.inc.msg')
-        @yield('content')
+        @include('site.inc.msg')
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            @include('site.inc.left-menu')
+        </div>
+        <div class="col-sm-4">
+            @yield('content')
+        </div>
     </div>
 </div>
 <div id="app"></div>

@@ -20,11 +20,11 @@
 </head>
 <body>
 <header>
-    @include('admin.inc.top-menu')
+    @include('site.inc.top-menu')
 </header>
 <div class="container">
     <div class="row">
-        @include('admin.inc.msg')
+        @include('site.inc.msg')
         @yield('content')
     </div>
 </div>

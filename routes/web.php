@@ -17,3 +17,5 @@ Route::get('/', function () {
 });
 
 Route::resource('admin/suppliers', 'Admin\SupplierAction');
+
+Route::get('/brands/{alias}', 'BrandsController@brandsAction');
